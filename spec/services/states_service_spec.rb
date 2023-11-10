@@ -1,5 +1,4 @@
 require 'spec_helper'
-# require '../../services/states_service'
 
 RSpec.describe StatesService do
   describe 'class methods' do
