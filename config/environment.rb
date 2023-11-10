@@ -7,7 +7,7 @@ Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require fil
 #require the services
 Dir.glob(File.join(APP_ROOT, 'app', 'services', '*.rb')).each { |file| require file }
 # require database configurations
-# require File.join(APP_ROOT, 'config', 'database')
+# require File.join(APP_ROOT, 'config', 'database.yml')
 # configure runner settings
 class Application < Sinatra::Base
   set :method_override, true

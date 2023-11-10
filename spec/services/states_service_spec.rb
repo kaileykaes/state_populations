@@ -12,10 +12,10 @@ RSpec.describe StatesService do
       expect(response_data).to be_an Array
 
       response_data.each do |r|
-        expect(r).to have_key(:name)
-        expect(r[:name]).to be_a Hash
-        expect(r[:name]).to have_key(:common)
-        expect(r[:name][:common]).to be_a String
+        expect(r).to have_key(:Population)
+        expect(r[:Population]).to be_an Integer
+        expect(r).to have_key(:"ID Year")
+        expect(r[:"ID Year"]).to be_an Integer
       end
     end
   end
