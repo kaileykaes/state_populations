@@ -6,8 +6,10 @@ APP_ROOT = File.expand_path('..', __dir__)
 Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require file }
 #require the services
 Dir.glob(File.join(APP_ROOT, 'app', 'services', '*.rb')).each { |file| require file }
+
+Dir.glob(File.join(APP_ROOT, 'app', 'facades', '*.rb')).each { |file| require file }
 # require database configurations
-# require File.join(APP_ROOT, 'config', 'database.yml')
+require File.join(APP_ROOT, 'config', 'database')
 # configure runner settings
 class Application < Sinatra::Base
   set :method_override, true
