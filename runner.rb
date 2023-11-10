@@ -3,6 +3,6 @@ require 'sinatra/activerecord'
 
 set :database_file, 'config/database.yml'
 
-class Application
+class Application < Sinatra::Base
   
 end
