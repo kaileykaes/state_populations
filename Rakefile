@@ -1,6 +1,6 @@
-require 'rake'
-require 'active_record'
+require "bundler"
+Bundler.require
 
-require './config/environment'
+require "sinatra/activerecord/rake"
 
-# require './runner'
+Dir.glob('lib/tasks/*.rake').each { |r| load r}
