@@ -1,7 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+production:
+  <<: *default
+  database: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
+  user: <%= ENV["DATABASE_USER"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
 development: 
-  adapter: sqlite3
-  database: db/state_populations_development
+  <<: *default
+  database: state_populations_development
 
 test: 
-  adapter: sqlite3
-  database: db/state_populations_test
+  <<: *default
+  database: state_populations_test
+
+#when deploying, remember this was important: `rake db:environment:set`

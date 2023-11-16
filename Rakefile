@@ -1,5 +1,6 @@
-require "bundler"
-Bundler.require
+require 'rake'
+require 'active_record'
 
-require "sinatra/activerecord/rake"
-require './runner'
+require './config/environment'
+
+# require './runner'
