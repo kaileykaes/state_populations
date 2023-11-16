@@ -10,6 +10,7 @@ gem 'rerun'
 gem 'rake'
 gem 'pry'
 gem 'jsonapi-serializer'
+gem 'faraday'
 
 group :test do 
   gem 'database_cleaner-active_record'
