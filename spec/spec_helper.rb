@@ -6,8 +6,6 @@ ENV["RACK_ENV"] = "test"
 
 require 'rspec'
 require 'rack/test'
-# require 'active_record'
-
 
 require 'simplecov'
 SimpleCov.start

@@ -7,11 +7,15 @@ RSpec.describe 'State Populations Facade' do
     end
 
     it '#save_data' do 
-      expect(State.all.count).to eq(0)
-      @spf.save_data('Alabama', 2013)
-      expect(State.all.count).to eq(1)
-      expect(Year.all.count).to eq(1)
-      # expect(Year.population).to eq()
+      expect(State.count).to eq(0)
+      expect(Year.count).to eq(0)
+
+      @spf.save_data_by_year(2013)
+
+      expect(State.count).to eq(52)
+      expect(Year.count).to eq(52)
+      expect(Year.first.year).to eq(2013)
+      expect(Year.last.year).to eq(2013)
     end
   end
 end

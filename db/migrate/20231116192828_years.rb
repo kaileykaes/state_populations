@@ -1,6 +1,7 @@
 class Years < ActiveRecord::Migration[7.0]
   def change
     create_table :years do |t|
+      t.integer :year 
       t.integer :population
       t.references :state, null: false, foreign_key: true
 

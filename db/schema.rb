@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_16_192828) do
   end
 
   create_table "years", force: :cascade do |t|
+    t.integer "year"
     t.integer "population"
     t.bigint "state_id", null: false
     t.datetime "created_at", null: false
