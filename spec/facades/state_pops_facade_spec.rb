@@ -17,5 +17,19 @@ RSpec.describe 'State Populations Facade' do
       expect(Year.first.year).to eq(2013)
       expect(Year.last.year).to eq(2013)
     end
+
+    it '::save_all' do 
+      @spf.save_all 
+
+      expect(State.count).to eq(52)
+
+      alabama = State.where(name: 'Alabama').first
+
+      expect(alabama.years.count).to eq(9) 
+
+      single_population = alabama.years.first.population
+
+      expect(single_population).to eq(4799277)
+    end
   end
 end
