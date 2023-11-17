@@ -1,8 +1,10 @@
+require 'csv'
+
 class StatePopsFacade
   def save_data_by_year(year)
     states_data = StatesService.endpoint(year)[:data]
     states = states_data.each do |datum|
-      state = State.create!(name: datum[:State], year: year, population: datum[:Population])
+      require 'pry'; binding.pry
     end
   end
 
