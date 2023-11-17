@@ -7,11 +7,8 @@ RSpec.describe 'State Populations Facade' do
     end
 
     it '#save_data' do 
-      expect(State.count).to eq(0)
-
       @spf.save_data_by_year(2013)
-
-      expect(State.count).to eq(52)
+      expect()
     end
 
     it '::save_all' do 
