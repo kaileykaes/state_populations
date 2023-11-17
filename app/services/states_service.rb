@@ -1,9 +1,9 @@
 class StatesService
   class << self
-    def endpoint(year)
+    def endpoint(year = nil)
       parse_response(conn.get("data?drilldowns=State&measures=Population&year=#{year}"))
     end
-    
+
     private 
     def conn 
       Faraday.new("https://datausa.io/api/")
