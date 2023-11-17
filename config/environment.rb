@@ -13,5 +13,5 @@ Dir.glob(File.join(APP_ROOT, 'app', 'services', '*.rb')).each { |file| require f
 Dir.glob(File.join(APP_ROOT, 'app', 'data', '*.csv')).each { |file| require file }
 
 #require classes
-Dir.glob(File.join(APP_ROOT, 'app', 'poros', '*.csv')).each { |file| require file }
+Dir.glob(File.join(APP_ROOT, 'app', 'poros', '*.rb')).each { |file| require file }
 
