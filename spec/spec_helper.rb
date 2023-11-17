@@ -10,9 +10,8 @@ SimpleCov.start
 
 
 def clean_up_test_files
-  data_by_year_test = '/data/state_pops_by_year.csv'
-  all_test = '/data/all_state_pops.csv'
-  
+  data_by_year_test = 'spec/data/state_pops_by_year.csv'
+  all_test = 'spec/data/all_state_pops.csv'
   if File.exists?(data_by_year_test)
     File.delete(data_by_year_test)
   end

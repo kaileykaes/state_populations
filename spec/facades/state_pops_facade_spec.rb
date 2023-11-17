@@ -4,9 +4,9 @@ RSpec.describe 'State Populations Facade' do
   describe 'methods' do
     before(:each) do 
       @spf = StatePopsFacade.new
-      clean_up_test_files
       @save_data_by_year_csv = 'spec/fixtures/state_pops_by_year.csv'
       @save_all_csv = 'spec/fixtures/all_state_pops.csv'
+      clean_up_test_files
     end
 
     it '#save_data_by_year' do 
@@ -21,9 +21,16 @@ RSpec.describe 'State Populations Facade' do
       expect(test_file).to eq(fixture_file)
     end
 
-    it '::save_all' do 
-      @spf.save_all()
-
+    it '#save_all' do 
+      save_all_test = 'spec/data/all_state_pops.csv'
+      expected = File.exists?(save_all_test)
+      expect(expected).to eq(false)
+      
+      @spf.save_all(save_all_test)
+      test_file = File.read(save_all_test)
+      fixture_file = File.read(@save_all_csv)
+      
+      expect(test_file).to eq(fixture_file)
     end
   end
 end
