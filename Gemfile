@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'rspec'
 gem 'pry'
 gem 'faraday'
 
 group :test do 
-  gem 'factory_bot'
-  gem 'faker'
   gem 'simplecov'
 end
