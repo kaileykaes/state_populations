@@ -1,16 +1,17 @@
 require 'bundler'
 Bundler.require(:default)
-require File.expand_path('../../config/environment.rb', __FILE__)
+require File.expand_path('../../../config/environment.rb', __FILE__)
+
+path = '/Users/kaileykaes/Projects/job_hunt/state_populations/data/state_info.csv'
 
 namespace :csv do 
   task :create do 
-    StatePopsFacade.new.save_all('/data/states_info.csv')
+    StatePopsFacade.new.save_all(path)
   end
 
   task :delete do 
-    csv_file = '/data/states_info.csv'
-    if File.exists?(csv_file)
-      File.delete(csv_file)
+    if File.exists?(path)
+      File.delete(path)
     end
   end
 end
