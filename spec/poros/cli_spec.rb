@@ -25,31 +25,31 @@ RSpec.describe CLI do
       expect(response).to eq('Shucks. Goodbye, friend!')
     end
 
-    xit '::greatest_increase' do 
-      response = CLI.greatest_increase
+    it '::greatest_increase' do 
+      response = CLI.greatest_increase(@pc)
 
       expect(response).to eq("The state with the greatest population increase between 2013 and 2021 was Puerto Rico.")
     end
 
-    xit '::greatest_decrease' do 
-      response = CLI.greatest_decrease
+    it '::greatest_decrease' do 
+      response = CLI.greatest_decrease(@pc)
 
-      expect(response).to eq("The state with the greatest population increase between 2013 and 2021 was Texas.")
+      expect(response).to eq("The state with the greatest population decrease between 2013 and 2021 was Texas.")
     end
 
-    xit '::lowest_decrease' do 
-      response = CLI.lowest_decrease
+    it '::lowest_decrease' do 
+      response = CLI.lowest_decrease(@pc)
 
-      expect(response).to eq("The state with the greatest population increase between 2013 and 2021 was Wyoming.")
+      expect(response).to eq("The state with the lowest population decrease between 2013 and 2021 was Wyoming.")
     end
 
-    xit '::lowest_increase' do 
-      response = CLI.lowest_increase
+    it '::lowest_increase' do 
+      response = CLI.lowest_increase(@pc)
       
-      expect(response).to eq("The state with the greatest population increase between 2013 and 2021 was Mississippi.")
+      expect(response).to eq("The state with the lowest population increase between 2013 and 2021 was Mississippi.")
     end
     
-    xit '::return_to_menu' do 
+    it '::return_to_menu' do 
       response = CLI.return_to_menu
 
       expect(response).to eq("Would you like other population info?")

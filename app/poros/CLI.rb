@@ -13,6 +13,26 @@ class CLI
       end
     end
 
+    def greatest_increase(calculator)
+      "The state with the greatest population increase between 2013 and 2021 was #{calculator.greatest_increase}."
+    end
+
+    def greatest_decrease(calculator)
+      "The state with the greatest population decrease between 2013 and 2021 was #{calculator.greatest_decrease}."
+    end
+
+    def lowest_decrease(calculator)
+      "The state with the lowest population decrease between 2013 and 2021 was #{calculator.lowest_decrease}."
+    end
+
+    def lowest_increase(calculator)
+      "The state with the lowest population increase between 2013 and 2021 was #{calculator.lowest_increase}."
+    end
+
+    def return_to_menu
+      "Would you like other population info?"
+    end
+
     private
     def beginning
       "Type the number that corresponds to the info you want.\n
