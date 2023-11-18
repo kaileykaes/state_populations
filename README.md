@@ -2,7 +2,7 @@
 
 ## Introduction
 
-State Populations consumes state population measures by year from a [`datausa.io` API](https://datausa.io/api/data?drilldowns=State&measures=Population) and stores it in a CSV file. This program then performs calculations on the resulting CSV data to discover which US states meet the following statistic criteria between the first and last recorded years: 
+State Populations consumes state population measures by year from a `datausa.io` [API](https://datausa.io/api/data?drilldowns=State&measures=Population) and stores it in a CSV file. This program then performs calculations on the resulting CSV data to discover which US states meet the following statistic criteria between the first and last recorded years: 
   1. Greatest population increase 
   2. Greatest population decrease 
   3. Lowest population increase 
