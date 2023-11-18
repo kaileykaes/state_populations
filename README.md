@@ -2,17 +2,18 @@
 
 ## Introduction
 
-State Populations consumes state populations api from `datausa.io` API [here](https://datausa.io/api/data?drilldowns=State&measures=Population), stores it to a CSV file, and performs calculations on the data to discover the following statistics between first and last recorded populations by year: 
+State Populations consumes state population measures by year from a `datausa.io` API [here](https://datausa.io/api/data?drilldowns=State&measures=Population) and stores it to a CSV file. This program then performs calculations on the resulting CSV data to discover which US states had the following between the first and last recorded years: 
   1. Greatest population increase 
   2. Greatest population decrease 
   3. Lowest population increase 
   4. Lowest population decrease 
+Users interact with State Populations via a simple CLI.
 
 ## Set-Up & Usage
 
 1. Fork this repository and clone it to your local machine in the directory it belongs. 
 2. `cd` into the directory and run `bundle install` from the command line. 
-3. In order to query the `datausa.io` api and create a CSV file with that info run the following command in your terminal:
+3. In order to query the `datausa.io` API and create a CSV file with that info run the following command in your terminal:
 ```
 rake csv:create
 ```
