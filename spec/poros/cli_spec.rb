@@ -9,7 +9,7 @@ RSpec.describe CLI do
     it '::welcome' do
       response = CLI.welcome
 
-      expect(response).to eq("Welcome! Would you like me to give you US population info?")
+      expect(response).to eq("Welcome! Would you like me to give you US population info?\n yes/no")
     end
 
     it '::start' do 
@@ -52,7 +52,7 @@ RSpec.describe CLI do
     it '::return_to_menu' do 
       response = CLI.return_to_menu
 
-      expect(response).to eq("Would you like other population info?")
+      expect(response).to eq("Would you like other population info?\n yes/no")
     end
   end
 end

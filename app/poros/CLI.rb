@@ -2,7 +2,7 @@ class CLI
   class << self
 
     def welcome
-      'Welcome! Would you like me to give you US population info?'
+      "Welcome! Would you like me to give you US population info?\n yes/no"
     end
 
     def start(answer)
@@ -30,7 +30,7 @@ class CLI
     end
 
     def return_to_menu
-      "Would you like other population info?"
+      "Would you like other population info?\n yes/no"
     end
 
     private
