@@ -2,7 +2,7 @@ require 'bundler'
 Bundler.require(:default)
 require File.expand_path('../config/environment.rb', __FILE__)
 
-@pc = PopsCalulator.new('spec/fixtures/all_state_pops.csv')
+@pc = PopsCalulator.new('data/state_info.csv')
 
 puts CLI.welcome
 @answer = gets.chomp
