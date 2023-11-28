@@ -38,7 +38,7 @@ class PopsCalulator
   def pop_diffs
     differences = {}
     @state_pops.each do |name, pops|
-      differences[name] = pops.last - pops.first
+      differences[name] = pops.first - pops.last
     end
     differences
   end
