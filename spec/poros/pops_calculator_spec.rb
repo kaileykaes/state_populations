@@ -11,24 +11,37 @@ RSpec.describe PopsCalulator do
   end
 
   describe 'methods' do 
-    it '#greatest_increase' do 
-      pc = PopsCalulator.new('spec/fixtures/all_state_pops_washington_greatest_increase.csv')
-      expect(pc.greatest_increase).to eq('Washington')
-    end
-    
-    it '#greatest_decrease' do 
-      pc = PopsCalulator.new('spec/fixtures/all_state_pops_florida_greatest_decrease.csv')
-      expect(pc.greatest_decrease).to eq('Florida')
-    end
-    
-    it '#lowest_increase' do 
-      pc = PopsCalulator.new('spec/fixtures/all_state_pops_dc_lowest_increase.csv')
-      expect(pc.lowest_increase).to eq('District of Columbia')
-    end
-    
-    it '#lowest_decrease' do 
-      pc = PopsCalulator.new('spec/fixtures/all_state_pops_vermont_lowest_decrease.csv')
-      expect(pc.lowest_decrease).to eq('Vermont')
+    describe 'happy paths' do 
+      it '#greatest_increase' do 
+        pc = PopsCalulator.new('spec/fixtures/all_state_pops_washington_greatest_increase.csv')
+        expect(pc.greatest_increase).to eq('Washington')
+      end
+      
+      it '#greatest_decrease' do 
+        pc = PopsCalulator.new('spec/fixtures/all_state_pops_florida_greatest_decrease.csv')
+        expect(pc.greatest_decrease).to eq('Florida')
+      end
+      
+      it '#lowest_increase' do 
+        pc = PopsCalulator.new('spec/fixtures/all_state_pops_dc_lowest_increase.csv')
+        expect(pc.lowest_increase).to eq('District of Columbia')
+      end
+      
+      it '#lowest_decrease' do 
+        pc = PopsCalulator.new('spec/fixtures/all_state_pops_vermont_lowest_decrease.csv')
+        expect(pc.lowest_decrease).to eq('Vermont')
+      end
+    end 
+
+    describe 'sad paths' do 
+      it 'population number is a string' do 
+        pc = PopsCalulator.new('spec/fixtures/all_state_pops_strings.csv')
+        # a few population & year values in csv are strings
+        expect(pc.lowest_decrease).to eq('Mississippi')
+        expect(pc.lowest_increase).to eq('Wyoming')
+        expect(pc.greatest_decrease).to eq('Puerto Rico')
+        expect(pc.greatest_increase).to eq('Texas')
+      end
     end
   end
 end

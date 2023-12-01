@@ -13,7 +13,9 @@ RSpec.describe State do
       expect(@state.id).to eq('04000US01')
       expect(@state.name).to eq('Alabama')
       expect(@state.year).to eq(2013)
+      expect(@state.year).to be_an Integer
       expect(@state.population).to eq(4799277)
+      expect(@state.population).to be_an Integer
     end
   end
 end
