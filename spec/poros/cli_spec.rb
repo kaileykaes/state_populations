@@ -1,10 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe CLI do
-  before(:each) do
-    @pc = PopsCalulator.new('spec/fixtures/all_state_pops.csv')
-  end
-
   describe 'methods' do 
     it '::welcome' do
       response = CLI.welcome
@@ -26,27 +22,32 @@ RSpec.describe CLI do
     end
 
     it '::greatest_increase' do 
-      response = CLI.greatest_increase(@pc)
+      pc = PopsCalulator.new('spec/fixtures/all_state_pops_washington_greatest_increase.csv')
+      response = CLI.greatest_increase(pc)
 
-      expect(response).to eq("The state with the greatest population increase between 2013 and 2021 was Puerto Rico.")
+      expect(response).to eq("The state with the greatest population increase between 2013 and 2021 was Washington.")
     end
 
     it '::greatest_decrease' do 
-      response = CLI.greatest_decrease(@pc)
+      pc = PopsCalulator.new('spec/fixtures/all_state_pops_florida_greatest_decrease.csv')
+      response = CLI.greatest_decrease(pc)
 
-      expect(response).to eq("The state with the greatest population decrease between 2013 and 2021 was Texas.")
+      expect(response).to eq("The state with the greatest population decrease between 2013 and 2021 was Florida.")
     end
 
     it '::lowest_decrease' do 
-      response = CLI.lowest_decrease(@pc)
-
-      expect(response).to eq("The state with the lowest population decrease between 2013 and 2021 was Wyoming.")
-    end
-
-    it '::lowest_increase' do 
-      response = CLI.lowest_increase(@pc)
+      pc = PopsCalulator.new('spec/fixtures/all_state_pops_vermont_lowest_decrease.csv')
+      response = CLI.lowest_decrease(pc)
       
-      expect(response).to eq("The state with the lowest population increase between 2013 and 2021 was Mississippi.")
+      expect(response).to eq("The state with the lowest population decrease between 2013 and 2021 was Vermont.")
+    end
+    
+    it '::lowest_increase' do
+      pc = PopsCalulator.new('spec/fixtures/all_state_pops_dc_lowest_increase.csv')
+
+      response = CLI.lowest_increase(pc)
+      
+      expect(response).to eq("The state with the lowest population increase between 2013 and 2021 was District of Columbia.")
     end
     
     it '::return_to_menu' do 

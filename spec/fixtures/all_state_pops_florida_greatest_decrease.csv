@@ -8,7 +8,7 @@ ID State,State,ID Year,Year,Population,Slug State
 04000US09,Connecticut,2021,2021,3605330,connecticut
 04000US10,Delaware,2021,2021,981892,delaware
 04000US11,District of Columbia,2021,2021,683154,district-of-columbia
-04000US12,Florida,2021,2021,21339762,florida
+04000US12,Florida,2021,2021,0,florida
 04000US13,Georgia,2021,2021,10625615,georgia
 04000US15,Hawaii,2021,2021,1453498,hawaii
 04000US16,Idaho,2021,2021,1811617,idaho
